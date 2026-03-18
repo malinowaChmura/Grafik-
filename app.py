@@ -107,7 +107,7 @@ if uploaded_file:
     if wybrane_swieto != "-- Wybierz --":
         kod = SLOWNIK_SWIAT[wybrane_swieto]
         wynik_swieta = df[(df['Data'].str.startswith(kod)) & (df['Czy_D'])]
-        st.dataframe(wynik_swieta[['Data', 'Pracownik', 'Status']].sort_values('Data_Obj', ascending=False), use_container_width=True)
+        st.dataframe(wynik_swieta.sort_values('Data_Obj', ascending=False)[['Data', 'Pracownik', 'Status']], use_container_width=True)
 
 
 else:
